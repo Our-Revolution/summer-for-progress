@@ -35,6 +35,13 @@ gulp.task('sass', function() {
   .pipe(livereload());
 });
 
+/* Copy Fonts to Dist */
+gulp.task('fonts', function() {
+  return gulp.src('summerforprogress/static/src/fonts/**/*')
+    .pipe(gulp.dest('summerforprogress/static/dist/fonts'))
+})
+
+
 /* Watch Files For Changes */
 gulp.task('watch', function() {
 	livereload.listen();
@@ -46,4 +53,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['sass', 'watch']);
-gulp.task('build', ['sass']);
+gulp.task('build', ['sass','fonts']);
