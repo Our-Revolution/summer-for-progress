@@ -2,4 +2,4 @@ from base import *
 
 DEBUG = False
 
-COMPRESS_ENABLED = True
+ALLOWED_HOSTS = ['summerforprogress.com']

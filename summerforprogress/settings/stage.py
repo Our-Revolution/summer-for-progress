@@ -1,3 +1,5 @@
 from base import *
 
-Debug = True
+DEBUG = False
+
+ALLOWED_HOSTS = ['summer-for-progress.herokuapp.com']
