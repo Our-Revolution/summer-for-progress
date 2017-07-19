@@ -45,4 +45,5 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'watch']);
+gulp.task('build', ['sass']);
