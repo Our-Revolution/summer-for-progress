@@ -1,6 +1,6 @@
 from base import *
 
-DEBUG = False
+DEBUG = True
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
