@@ -1,4 +1,5 @@
 {% load static %}
+{% load compress %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,6 +9,10 @@
     <meta name="author" content="{% block meta_author %}{% endblock %}">
 
     <title>{% block page_title %}Summer for Progress{% endblock %}</title>
+
+    {% compress css %}
+      <link rel="stylesheet" href="{% static "dist/css/main.min.css" %}" />
+    {% endcompress %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
