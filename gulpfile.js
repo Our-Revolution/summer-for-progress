@@ -6,7 +6,9 @@ var gulp = require('gulp'),
   gzip = require('gulp-gzip'),
   livereload = require('gulp-livereload'),
   autoprefixer = require('gulp-autoprefixer'),
-  sourcemaps = require('gulp-sourcemaps');
+  sourcemaps = require('gulp-sourcemaps'),
+  changed = require('gulp-changed'),
+  imagemin = require('gulp-imagemin');
 
 var gzip_options = {
 	threshold: '1kb',
@@ -35,6 +37,14 @@ gulp.task('sass', function() {
   .pipe(livereload());
 });
 
+/* Optimize Images */
+gulp.task('images', function() {
+  return gulp.src('summerforprogress/static/src/img/**')
+    .pipe(changed('summerforprogress/static/dist/img/'))
+    .pipe(imagemin())
+    .pipe(gulp.dest('summerforprogress/static/dist/img/'))
+});
+
 /* Copy Fonts to Dist */
 gulp.task('fonts', function() {
   return gulp.src('summerforprogress/static/src/fonts/**/*')
@@ -53,4 +63,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['sass', 'watch']);
-gulp.task('build', ['sass','fonts']);
+gulp.task('build', ['sass','fonts', 'images']);
