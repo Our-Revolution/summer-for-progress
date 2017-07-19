@@ -1,1 +1,1 @@
-web: gunicorn summerforprogress.wsgi
+web: gunicorn summerforprogress.wsgi --log-file=-
