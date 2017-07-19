@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from .views import home, platform, petition, get_involved
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', home, name='home'),
+    url(r'^platform',  platform, name='platform'),
+    url(r'^petition',  petition, name='petition'),
+    url(r'^get-involved',  get_involved, name='get involved'),
 ]

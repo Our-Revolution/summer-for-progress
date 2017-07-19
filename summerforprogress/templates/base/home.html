@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="row intro-bg">
+    <div class="container pt4 pb4">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Value proposi on that grabs people’s a en on immediately.</h1>
+          <p>Suppor ng copy that explains what the Jeff this is. Cum sociis natoque pena bus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna.
+          <p><strong>To get started, tell your Member of Congress that you support the People’s Pla orm and that they should, too.</strong></p>
+        </div>
+
+        <div class="col-md-5 col-md-offset-1">
+          {% include "partials/signup.html"%}
+        </div>
+
+        <div class="text-center">
+          <a href="#plan" class="learn-more white-text">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="partners">
+      <ul class="partners__list">
+        <li class="partners__logo"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="row pt4 pb4 teal-text" id="plan">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <h1>A header describing what exactly we’re doing and why amet cras inceptos etiam.</h1>
+          <p>Supporting copy to go as in-depth with the plan and theory of change as we need. We want to funnel people down to the timeline. We can also have a full-width background image here or perhaps imagery to the right. Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row timeline teal-text">
+    <div class="container">
+      <div class="row">
+        <ol class="timeline__list col-md-8 col-md-offset-2">
+          <li class="timeline__item">
+            <span class="sub-heading">Tuesday, July 18</span>
+            <h2 class="timeline__heading">Petition Launch</h2>
+            <p class="timeline__description">The Summer for Progress Coalition will launch with a national petition, with the goal of getting 100,000 people to support the People’s Platform.</p>
+            <a href="#" class="btn btn-success btn-lg">Sign the Petition</a>
+          </li>
+
+          <li class="timeline__item">
+            <span class="sub-heading">Tuesday, July 25</span>
+            <h2 class="timeline__heading">Petition Delivery & Day of Action in DC</h2>
+            <p class="timeline__description">Our Revolution will hold a press conference with Coalition Partners and Progressive House Champions, followed by a petition delivery at the DNC headquarters.</p>
+          </li>
+
+          <li class="timeline__item">
+            <span class="sub-heading">July 31 - August 4</span>
+            <h2 class="timeline__heading">Lobbying & Direct Action Trainings</h2>
+            <p class="timeline__description">The coalition will host an Online Summer for Progress Direct Action training for local partner organizations. Local Groups will attend training webinars and plan events.</p>
+          </li>
+
+          <li class="timeline__item">
+            <span class="sub-heading">August 7 -11</span>
+            <h2 class="timeline__heading">First National Week of Action</h2>
+            <p class="timeline__description">Summer for Progress National Week of Action will kick off with lobbying days, townhall visits and local actions.</p>
+          </li>
+
+          <li class="timeline__item">
+            <span class="sub-heading">August 14 - 18</span>
+            <h2 class="timeline__heading">Strategy Break</h2>
+            <p class="timeline__description">Week of regroup, assessment, and strategy. For some, this will be their first week of engagement with Members of Congress.</p>
+          </li>
+
+          <li class="timeline__item">
+            <span class="sub-heading">August 21 - 25</span>
+            <h2 class="timeline__heading">Second National Week of Action</h2>
+            <p class="timeline__description">Second Week of Action will kick off with lobbying days, townhall visits and local actions.</p>
+          </li>
+
+          <li class="timeline__item">
+            <span class="sub-heading">Friday, September 15</span>
+            <h2 class="timeline__heading">Launch Final People’s Platform Scorecard  </h2>
+            <p class="timeline__description">The Summer for Progress Coalition will release the Platform For The People Scorecard.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+{% endblock %}
