@@ -27,6 +27,19 @@ $nav-link-hover-bg: transparent;
 
 body {
   // padding-top: 50px;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+}
+
+a {
+  color: $brand-secondary;
+
+  &:hover {
+    color: darken($brand-secondary, 15);
+  }
 }
 
 .btn {
@@ -43,6 +56,10 @@ body {
   left: 0;
   right: 0;
 
+  .nav>li>a:focus, .nav>li>a:hover {
+    background-color: transparent;
+  }
+
   a {
     color: white;
     background: none;
@@ -53,13 +70,13 @@ body {
   }
 
   li {
-    width: 14%;
+    width: 20%;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 12px;
 
     a:hover {
-      font-weight: bolder;
+      font-weight: 700;
     }
   }
 
@@ -88,6 +105,215 @@ body {
   letter-spacing: 2px;
   font-size: 12px;
 }
+
+//// Buttons
+// Buttons
+.btn {
+  font-weight: 700;
+  height: 40px;
+  padding: 10px 15px;
+  // text-transform: uppercase;
+  // letter-spacing: 1px;
+}
+
+.btn-round {
+  border-radius: 50px;
+}
+
+.btn-primary,
+.btn-primary:visited {
+  background-color: $brand-primary;
+  color: white;
+  border: 1px solid $brand-primary;
+  outline: none;
+}
+
+.btn-primary:hover,
+.btn-primary:active:hover,
+.btn-primary.active:hover {
+  background-color: darken($brand-primary, 8);
+  color: white;
+  border: 1px solid darken($brand-primary, 8);
+  outline: none;
+}
+
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active {
+  border: 1px solid darken($brand-primary, 15);
+  background-color: darken($brand-primary, 15);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-secondary,
+.btn-secondary:visited {
+  background-color: $brand-secondary;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active:hover,
+.btn-secondary.active:hover {
+  background-color: darken($brand-secondary, 10);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-secondary:focus,
+.btn-secondary.focus,
+.btn-secondary:active,
+.btn-secondary.active {
+  background-color: darken($brand-secondary, 15);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-dark, .btn-dark:visited {
+  background-color: darken($brand-secondary, 20);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-dark:hover,
+.btn-dark:active:hover,
+.btn-dark.active:hover {
+  background-color: darken($brand-secondary, 25);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-dark:focus,
+.btn-dark.focus,
+.btn-dark:active,
+.btn-dark.active {
+  background-color: darken($brand-secondary, 30);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-donate,
+.btn-donate:visited {
+  background-color: $orange;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-donate:hover,
+.btn-donate:active:hover,
+.btn-donate.active:hover {
+  background-color: darken($orange, 10);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-donate:focus,
+.btn-donate.focus,
+.btn-donate:active,
+.btn-donate.active {
+  background-color: darken($orange, 15);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-outline,
+.btn-outline:visited {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 0;
+}
+
+.btn-outline:hover,
+.btn-outline:active:hover,
+.btn-outline.active:hover {
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 0;
+}
+
+.btn-outline:focus,
+.btn-outline.focus,
+.btn-outline:active,
+.btn-outline.active {
+  background-color: rgba(255,255,255,0.4);
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 0;
+}
+
+.btn-twitter,
+.btn-twitter:visited {
+  background-color: #1da1f2;
+  color: white;
+  border: 1px solid #1da1f2;
+  outline: none;
+}
+
+.btn-twitter:hover,
+.btn-twitter:active:hover,
+.btn-twitter.active:hover {
+  background-color: darken(#1da1f2, 8);
+  color: white;
+  border: 1px solid darken(#1da1f2, 8);
+  outline: none;
+}
+
+.btn-twitter:focus,
+.btn-twitter.focus,
+.btn-twitter:active,
+.btn-twitter.active {
+  border: 1px solid darken(#1da1f2, 15);
+  background-color: darken(#1da1f2, 15);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-facebook,
+.btn-facebook:visited {
+  background-color: #3b5998;
+  color: white;
+  border: 1px solid #3b5998;
+  outline: none;
+}
+
+.btn-facebook:hover,
+.btn-facebook:active:hover,
+.btn-facebook.active:hover {
+  background-color: darken(#3b5998, 8);
+  color: white;
+  border: 1px solid darken(#3b5998, 8);
+  outline: none;
+}
+
+.btn-facebook:focus,
+.btn-facebook.focus,
+.btn-facebook:active,
+.btn-facebook.active {
+  border: 1px solid darken(#3b5998, 15);
+  background-color: darken(#3b5998, 15);
+  color: white;
+  border: none;
+  outline: none;
+}
+
 
 //// Footer
 .footer {
@@ -150,6 +376,93 @@ body {
     list-style-type: none;
     padding: 20px;
     margin: 0;
+  }
+}
+
+// Petition Signup
+.petition-signup {
+  #can_embed_form {
+    background: rgba(0,0,0,.2)!important;
+    border: 0 !important;
+    border-radius: 3px;
+    padding: 25px !important;
+    font-family: 'Lato', sans-serif !important;
+
+    h2, h3, h4, label {
+      color: white !important;
+    }
+
+    .country_wrap {
+      display: none;
+    }
+
+    &.can_float #form_col2, &.can_float #form_col1 {
+      width: 100% !important;
+    }
+
+    #d_sharing {
+      border-top: none !important;
+      display: none !important;
+    }
+
+    h3, h4 {
+      display: none;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-weight: 700 !important;
+    }
+
+    #can_thank_you {
+      background-color: $orange !important;
+    }
+
+    #embed_toggle-open, #embed_toggle-close {
+      color: white !important;
+    }
+
+    #action_welcome_message #action_welcome_message_inner {
+      border-radius: 3px !important;
+    }
+
+    input[type=submit] {
+      margin-bottom: 0 !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: none !important;
+    }
+  }
+
+  #can_embed_form_inner * {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  #logo_wrap {
+    display: none;
+  }
+
+  #can_embed_form input[type="submit"], #can_embed_form .button, #donate_auto_modal input[type="submit"], #donate_auto_modal .button {
+    background-color: $teal !important;
+  }
+
+  #can_embed_form input[type="submit"]:hover, #can_embed_form .button:hover, #donate_auto_modal input[type="submit"]:hover, #donate_auto_modal .button:hover {
+    background-color: darken($teal,15) !important;
+  }
+
+  #action_info {
+    display: none;
+  }
+}
+
+.orange-signup {
+  .petition-signup {
+    #can_embed_form {
+      background: $orange !important;
+
+      #can_thank_you {
+        background: $teal !important;
+      }
+    }
   }
 }
 
@@ -247,6 +560,12 @@ body {
     bottom: 20px;
     left: 0;
     right: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   &__sponsor {
@@ -309,6 +628,14 @@ body {
   padding-top: 4rem;
 }
 
+.pb2 {
+  padding-bottom: 2rem;
+}
+
+.pt2 {
+  padding-top: 2rem;
+}
+
 .pb4 {
   padding-bottom: 4rem;
 }
@@ -329,6 +656,14 @@ body {
   margin-bottom: 20;
 }
 
+.fs18 {
+  font-size: 18px;
+}
+
+.f5f5f5-bg {
+  background: #f5f5f5;
+}
+
 //// Colors
 .teal-text {
   color: $teal;
@@ -340,4 +675,8 @@ body {
 
 .white-text {
   color: white;
+
+  &:hover {
+    color: white !important;
+  }
 }

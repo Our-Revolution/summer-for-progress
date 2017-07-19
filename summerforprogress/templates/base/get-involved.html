@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <section class="section--intro row">
+  <section class="section--intro intro-bg pb4 row">
     <div class="container">
       <div class="row">
         <div class="col-md-7">
@@ -13,35 +13,41 @@
     </div>
   </section>
 
-  <section class="row">
+  <section class="row f5f5f5-bg pt4 pb4">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 fs18">
           <h2>1. Join us on Slack</h2>
           <p><strong>After you’ve signed <a href="/petition">the petition</a>, join us on Slack!</strong> Slack is a messaging app for teams, and it’s what we use to stay connected with folks all around the country.</p>
 
           <p>Organizers from national partner organizations, as well as other activists and hosts, are waiting for you! We’ll be there to answer questions or walk you through key steps of the action, or maybe you can lend your experience someone else. We’re in this together!</p>
         </div>
 
-        <div class="col-md-4">
-          <a href="#" class="btn btn-success btn-block">Join us on Slack</a>
+        <div class="col-md-5 col-md-offset-1 pt2 pb2">
+          <a href="https://join.slack.com/summerforprogress/shared_invite/MjEwNzI1ODEwMzczLTE0OTk3MTc5OTItM2NkZDY2ZDBlYg" target="_blank" class="btn btn-secondary btn-block">Join us on Slack</a>
         </div>
       </div>
+    </div>
+  </section>
 
+  <section class="row pt4 pb4">
+    <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 fs18">
           <h2>2. Share on Social Media</h2>
           <p>Share <a href="/petition">the petition</a> with your friends, family and following, then head over to our resources page to find graphics, pre-written social posts and more.</p>
         </div>
 
-        <div class="col-md-4 text-center">
-          <a href="#" class="btn btn-success btn-block">Share on Facebook</a>
-          <a href="#" class="btn btn-success btn-block">Share on Twitter</a>
-          <a href="#">Get social media resources <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <div class="col-md-5 col-md-offset-1 text-center pt2 pb2">
+          <a href="#" class="btn btn-dark btn-block" id="facebook-share">Share on Facebook</a>
+          <a href="https://twitter.com/OurRevolution/status/887381688573145088" class="btn btn-secondary btn-block mb20" target="_blank">Share on Twitter</a>
+          <a href="https://docs.google.com/document/d/18oDmixPjjw0vlXUVNsLBO-CljJADjSFs3ghF62VE0mo/edit" target="_blank" class="mt20">Visit the social media kit <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-6">
           <h2>3. Contact your Representative</h2>
           <p>Use our calling tool to let your Member of ongress know that they should support ther eopl’es Platform.</p>
@@ -51,7 +57,7 @@
           <p><a href="#">Dial 555-5555 or fill out the form to the right an we’ll connect you to your representative.</a></p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-5 col-md-offset-1">
           <h3><a href="#">Dial 555-5555</a></h3>
           <p>Or fill out this form and your phone will ring.</p>
 
@@ -79,53 +85,88 @@
             <button type="submit" class="btn btn-primary btn-block">Make the Call</button>
           </form>
         </div>
-      </div>
+      </div> -->
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-6">
           <h2>4. Attend an Event</h2>
           <p>Inspired copy about why we need to people to attend events here. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
         </div>
 
-        <div class="col-md-4 text-center">
-          <a href="#" class="btn btn-success btn-block">Find an Event</a>
+        <div class="col-md-5 col-md-offset-1 text-center">
+          <a href="#" class="btn btn-secondary btn-block">Find an Event</a>
         </div>
-      </div>
-
+      </div> -->
+  <section class="row f5f5f5-bg pt4 pb4">
+    <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h2>5. Sign Up to Host an Event</h2>
+        <div class="col-md-6 fs18">
+          <h2>3. Sign Up to Host an Event</h2>
           <p>Inspired copy about why we need to people to host events here. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
 
-          <p><a href="#">You can find a guide for scheduling and hosting both town-halls and in-person lobby meetings here!</a></p>
+          <!-- <p><a href="#">You can find a guide for scheduling and hosting both town-halls and in-person lobby meetings here!</a></p> -->
         </div>
 
-        <div class="col-md-4">
-          <form class="signup" action="" method="POST">
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" class="form-control" placeholder="555-5555">
-            </div>
-
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Jane Doe">
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" class="form-control" placeholder="jane@example.com">
-            </div>
-
-            <div class="form-group">
-              <label for="name">Zip Code</label>
-              <input type="text" id="name" class="form-control" placeholder="Jane Doe">
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-block">Make the Call</button>
-          </form>
+        <div class="col-md-5 col-md-offset-1 orange-signup">
+          <link href='https://actionnetwork.org/css/style-embed.css' rel='stylesheet' type='text/css' /><script src='https://actionnetwork.org/widgets/v2/form/summer-for-progress?format=js&source=widget'></script><div id='can-form-area-summer-for-progress' class="petition-signup" style='width: 100%'><!-- this div is the target for our HTML insertion --></div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- <section class="row pt4 pb4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 fs18">
+          <h2>4. Check back soon</h2>
+          <p>The Summer for Progress is jsut beginning, and we'll have much more to share soon.</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));
+  </script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '1404583106275676',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.10'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+     document.getElementById('facebook-share').onclick = function() {
+       FB.ui({
+         method: 'share',
+         display: 'popup',
+         href: 'https://www.facebook.com/PoliticalRevolution/photos/a.1219104214808459.1073741828.1194419550610259/1578776702174540/?type=3&theater',
+       }, function(response){});
+     }
+  </script>
 {% endblock %}
