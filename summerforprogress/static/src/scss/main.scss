@@ -86,6 +86,27 @@ a {
     height: 100px;
     background: url('../img/logo-white.svg') no-repeat center center;
   }
+
+  @include until($medium) {
+    background: $orange;
+    position: relative;
+
+    .nav {
+      margin: 0;
+    }
+
+    li {
+      text-align: center;
+      width: 50%;
+      float: left;
+      margin: auto;
+
+      &:first-child {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
 }
 
 // Global
@@ -367,6 +388,10 @@ a {
   p {
     font-size: 18px;
   }
+
+  @include until($medium) {
+    padding-top: 0;
+  }
 }
 
 .partners {
@@ -532,18 +557,18 @@ a {
   text-align: center;
   padding: 25px;
   transition: 0.25s;
-  cursor: pointer;
+  // cursor: pointer;
   background-size: auto 185px;
   background-repeat: no-repeat;
   background-position: 125% center;
 
   &:hover {
-    background-color: $teal;
-    color: white;
-
-    a {
-      color: white;
-    }
+    // background-color: $teal;
+    // color: white;
+    //
+    // a {
+    //   color: white;
+    // }
   }
 
   &:nth-child(4n) {
@@ -556,6 +581,7 @@ a {
   }
 
   &__link {
+    display: none;
     position: absolute;
     bottom: 20px;
     left: 0;
@@ -571,6 +597,29 @@ a {
   &__sponsor {
     margin-top: 0;
   }
+
+  @include until($large) {
+    height: 250px;
+    width: 31%;
+
+    &:nth-child(4n) {
+      margin-right: 2%;
+    }
+  };
+
+  @include until($medium) {
+    height: 250px;
+    width: 48%;
+
+    &:nth-child(4n) {
+      margin-right: 2%;
+    }
+  };
+
+  @include until($small) {
+    width: 100%;
+    margin-right:2%;
+  };
 
   &--expanded {
     box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
