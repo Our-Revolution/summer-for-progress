@@ -557,18 +557,18 @@ a {
   text-align: center;
   padding: 25px;
   transition: 0.25s;
-  // cursor: pointer;
+  cursor: pointer;
   background-size: auto 185px;
   background-repeat: no-repeat;
   background-position: 125% center;
 
   &:hover {
-    // background-color: $teal;
-    // color: white;
-    //
-    // a {
-    //   color: white;
-    // }
+    background-color: $teal;
+    color: white;
+
+    a {
+      color: white;
+    }
   }
 
   &:nth-child(4n) {
@@ -581,7 +581,7 @@ a {
   }
 
   &__link {
-    display: none;
+    // display: none;
     position: absolute;
     bottom: 20px;
     left: 0;
