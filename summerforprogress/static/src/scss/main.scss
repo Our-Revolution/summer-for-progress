@@ -440,6 +440,15 @@ a {
 
     #can_thank_you {
       background-color: $teal !important;
+
+      a {
+  			color: white !important;
+  			text-decoration: underline;
+  		}
+
+      #action_info {
+  			border-top: 1px solid rgba(255,255,255,0.3) !important;
+  		}
     }
 
     #embed_toggle-open, #embed_toggle-close {
