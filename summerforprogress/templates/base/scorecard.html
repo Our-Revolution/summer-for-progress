@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="section intro-bg pb4 row">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 pt4">
+          <span class="sub-heading">Scorecard</span>
+          <h1 class="mt0">The Summer for Progress: Let’s Move Our Country Forward</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="row">
+    <div class="container pt4 pb4">
+      <table class='table table-responsive table-bordered table-striped table-hover'>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Grade</th>
+            <th>State</th>
+            <th>District</th>
+            <th>Health Care</th>
+            <th>Free College Tuition</th>
+            <th>Minimum Wage</th>
+            <th>Women's Rights</th>
+            <th>Voting Rights</th>
+            <th>Criminal Justice & Immigration</th>
+            <th>Wall Street</th>
+            <th>Enviroment</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          {% for rep in data %}
+            <tr>
+              <td>{{rep.first}}</td>
+              <td>{{rep.last}}</td>
+              <td></td>
+              <td>{{rep.state}}</td>
+              <td>{{rep.district}}</td>
+              <td>{{rep.healthcare}}</td>
+              <td>{{rep.college_tuition}}</td>
+              <td>{{rep.minimum_wage}}</td>
+              <td>{{rep.womens_rights}}</td>
+              <td>{{rep.voting_rights}}</td>
+              <td>{{rep.justice}}</td>
+              <td>{{rep.workers_rights}}</td>
+              <td>{{rep.climate}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock %}
