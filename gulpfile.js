@@ -51,6 +51,12 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest('summerforprogress/static/dist/fonts'))
 })
 
+/* Copy JS to Dist */
+gulp.task('js', function() {
+  return gulp.src('summerforprogress/static/src/js/**/*')
+    .pipe(gulp.dest('summerforprogress/static/dist/js'))
+})
+
 
 /* Watch Files For Changes */
 gulp.task('watch', function() {
@@ -62,5 +68,5 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('default', ['sass', 'watch','fonts','images']);
-gulp.task('build', ['sass','fonts', 'images']);
+gulp.task('default', ['sass', 'watch','fonts','images','js']);
+gulp.task('build', ['sass','fonts', 'images','js']);
