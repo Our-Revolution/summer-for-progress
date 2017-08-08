@@ -21,21 +21,13 @@ class Representative(models.Model):
     last_updated = models.DateTimeField(auto_now=True, null=True, blank=True)
         
     def save(self, *args, **kwargs):    
-        score = 0
-        
-        print 'begin'
-        
-        print self.healthcare
+        score = 0        
         
         if self.healthcare:
-            print 'healthcare'
             score += 1
-            print score
             
         if self.college_tuition:
             score += 1
-            print score
-            
             
         if self.minimum_wage:
             score += 1
