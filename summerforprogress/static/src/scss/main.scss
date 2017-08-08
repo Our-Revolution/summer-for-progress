@@ -797,12 +797,14 @@ a {
   }
   
   table {
+    max-width: 100%;
     border: none !important;
   }
   
   tbody {
     border: 1px solid #ddd;
     border-radius: 3px !important;
+    max-width: 100%;
   }
   
   .fuzzy-search {
@@ -909,6 +911,10 @@ a {
     &__status {
       float: left;
       width: 50%;
+    }
+    
+    &__block {
+      width: 100%;
     }
     
     td:after { 
