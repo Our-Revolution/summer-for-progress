@@ -1,12 +1,12 @@
 // Media Queries
 @mixin at-least($device-width) {
-  @media screen and (min-device-width: $device-width) {
+  @media screen and (min-width: $device-width) {
     @content;
   }
 }
 
 @mixin until($device-width) {
-  @media screen and (max-device-width: $device-width - 1) {
+  @media screen and (max-width: $device-width - 1) {
     @content;
   }
 }

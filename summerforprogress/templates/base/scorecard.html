@@ -30,6 +30,11 @@
               <span class="key__color--no"></span>
               <span>Has Not Cosigned</span>
             </div>
+            
+            <div class="key__item">
+              <span class="key__color--gray"></span>
+              <span>Not Introduced Yet</span>
+            </div>
           </div>
         </div>
       </div>
@@ -68,7 +73,7 @@
                   Rep. {{rep.first}} {{rep.last}}, {{rep.state}} {{rep.district}}
                 </td>
                 <td class="last hidden-xs hidden-sm">{{rep.last}}</td>
-                <td class="score text-center">{{rep.score}}%</td>
+                <td class="score text-center">{{rep.score|floatformat:0}}%</td>
                 <td class="state text-center hidden-xs hidden-sm">{{rep.state}}</td>
                 <td class="district text-center hidden-xs hidden-sm">{{rep.district}}</td>
                 <td class="scorecard__status healthcare {{ rep.healthcare|yesno:'yes,no'}}">
