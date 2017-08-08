@@ -4,24 +4,45 @@
   <section class="section intro-bg pb4 row">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 pt4">
+        <div class="col-md-7 pt4">
           <span class="sub-heading">Scorecard</span>
           <h1 class="mt0">The Summer for Progress: Let’s Move Our Country Forward</h1>
+          <p class="fs18">The Democratic Party Platform makes it clear that Democrats must fight for these issues as a party. We’re asking all House Democrats to commit to supporting our #PeoplesPlatform bills by signing on as a co-sponsor when Congress comes back in session in September.</p>
+          <p><strong>Find your Democratic Representative below to figure out how they stand on the #PeoplesPlatform.</strong></p>
         </div>
       </div>
     </div>
   </section>
   
-  <section class="row">
-    <div class="container pt4 pb4">      
-      <div id="scorecard" class="scorecard col-md-12">
-        <input class="fuzzy-search" placeholder="Search" />
-
-        <table class='scorecard table table-responsive table-striped table-hover'>
-          <thead>
+  <section class="row scorecard" id="scorecard">
+    <div class="f5f5f5-bg mb20">
+      <div class="container">
+        <div class="col-md-12">
+          <input class="fuzzy-search mb20 mt20" placeholder="Search" />
+          <div class="key">
+            <span class="key__label"><strong>Key:</strong></span>
+            <div class="key__item">
+              <span class="key__color--yes"></span>
+              <span>Has Cosigned</span>
+            </div>
+            
+            <div class="key__item">
+              <span class="key__color--no"></span>
+              <span>Has Not Cosigned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container pb4">      
+      <div class="scorecard col-md-12">
+        <table class='table table-striped'>
+          <thead class="hidden-xs hidden-sm">
             <tr>
-              <th class="sort" data-sort="first">First Name <i class="glyphicon glyphicon-sort"></i></th>
-              <th class="sort" data-sort="last">Last Name <i class="glyphicon glyphicon-sort"></i></th>
+              <th></th>
+              <th class="sort" data-sort="first">First <i class="glyphicon glyphicon-sort"></i></th>
+              <th class="sort" data-sort="last">Last <i class="glyphicon glyphicon-sort"></i></th>
               <th class="sort text-center" data-sort="score">Score <i class="glyphicon glyphicon-sort"></i></th>
               <th class="sort text-center" data-sort="state">State <i class="glyphicon glyphicon-sort"></i></th>
               <th class="sort text-center" data-sort="district">District <i class="glyphicon glyphicon-sort"></i></th>
@@ -32,18 +53,24 @@
               <th class="scorecard__rotate sort" data-sort="voting_rights"><div><span>Voting Rights <i class="glyphicon glyphicon-sort"></div></span></th>
               <th class="scorecard__rotate sort" data-sort="justice"><div><span>Criminal Justice <i class="glyphicon glyphicon-sort"></div></span></th>
               <th class="scorecard__rotate sort" data-sort="workers_rights"><div><span>Wall Street <i class="glyphicon glyphicon-sort"></div></span></th>
-              <th class="scorecard__rotate sort" data-sort="climate"><div><span>Enviroment <i class="glyphicon glyphicon-sort"></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="climate"><div><span>Climate <i class="glyphicon glyphicon-sort"></div></span></th>
             </tr>
           </thead>
           
           <tbody class="list">
             {% for rep in data %}
-              <tr>
-                <td class="first">{{rep.first}}</td>
-                <td class="last">{{rep.last}}</td>
+              <tr> 
+                <td class="hidden-xs hidden-sm">Rep.</td>
+                <td class="first hidden-xs hidden-sm">
+                  {{rep.first}}
+                </td>
+                <td class="first visible-xs visible-sm">
+                  Rep. {{rep.first}} {{rep.last}}, {{rep.state}} {{rep.district}}
+                </td>
+                <td class="last hidden-xs hidden-sm">{{rep.last}}</td>
                 <td class="score text-center">{{rep.score}}%</td>
-                <td class="state text-center">{{rep.state}}</td>
-                <td class="district text-center">{{rep.district}}</td>
+                <td class="state text-center hidden-xs hidden-sm">{{rep.state}}</td>
+                <td class="district text-center hidden-xs hidden-sm">{{rep.district}}</td>
                 <td class="scorecard__status healthcare {{ rep.healthcare|yesno:'yes,no'}}">
                   <div class="scorecard__block">{{rep.healthcare}}</div>
                 </td>
