@@ -12,7 +12,7 @@ class RepresentativeAdmin(admin.ModelAdmin):
     
     readonly_fields = ('score',)
 
-    def get_actions(self, request):
-        actions = super(RepresentativeAdmin, self).get_actions(request)
-        del actions['delete_selected']
-        return actions
+    # def get_actions(self, request):
+    #     actions = super(RepresentativeAdmin, self).get_actions(request)
+    #     del actions['delete_selected']
+    #     return actions
