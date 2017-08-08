@@ -7,6 +7,7 @@
 $orange: #F15A34;
 $teal: #71C8B3;
 $gray: #282F2E;
+$red: #df2e24;
 
 // Media Query Sized
 $extra-small: 320px;
@@ -85,6 +86,11 @@ a {
 
     height: 100px;
     background: url('../img/logo-white.svg') no-repeat center center;
+    transition: 0.25s;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   @include until($medium) {
@@ -737,4 +743,236 @@ a {
   &:hover {
     color: white !important;
   }
+}
+
+// Scorecard 
+.scorecard {
+  .container {
+    position: relative;
+  }
+  
+  .key {
+    font-size: 12px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    border-radius: 3px;
+    background: white;
+    // border: 1px solid #ddd;
+
+    &__label {
+      margin-right: 10px;
+    }
+    
+    &__item {
+      line-height: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-top: 5px;
+      
+      &:nth-child(2) {
+        margin-right: 10px;
+      }
+    }
+    
+    &__color {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      border-radius: 3px;
+      
+      &--yes {
+        @extend .key__color;
+        
+        background: $teal;
+      }
+      
+      &--no {
+        @extend .key__color;
+        background: $red;
+      }
+    }
+  }
+  
+  table {
+    border: none !important;
+  }
+  
+  tbody {
+    border: 1px solid #ddd;
+    border-radius: 3px !important;
+  }
+  
+  .fuzzy-search {
+    // top: 0;
+    // position: absolute;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+  }
+  
+  th, thead {
+    // font-weight: normal;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: none !important;
+  }
+  
+  tr, td {
+    padding: 5px;
+  }
+  
+  &__rotate {
+    height: 180px;
+    white-space: nowrap;
+    vertical-align: baseline !important;
+    // padding-bottom: 0;
+    // position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    > div {
+      // position: absolute;
+      transform: translate(16px,137px) rotate(290deg);
+      width: 40px;
+      
+      > span {
+        border-bottom: 1px solid #ddd;
+        padding: 14px 10px;
+      }
+    }
+  }
+  
+  &__status {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    // padding: 0 !important;
+    background: $red;
+    
+    &.yes {
+      background: $teal;
+    }
+  }
+  
+  &__block {
+    @extend .hide-text;
+    
+    width: 40px;
+    height: 40px;
+  }
+  
+  .sort {
+    .glyphicon {
+      color: #bbb;
+    }
+    
+    cursor: pointer;
+  }
+  
+  .score {
+    font-weight: bolder;
+  }
+  
+  @include until($large) {
+    table, tr, td, tbody, th {
+      display: block;
+      position: relative;
+    }
+    
+    .fuzzy-search {
+      position: relative;
+      top: auto;
+    }
+    
+    .first {
+      display: block;
+      span {
+        display: inline !important;
+      }
+      border-top: none;
+      padding-right: 70px;
+      font-weight: bolder;
+    }
+    
+    .score {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      border-top: none;
+    }
+    
+    &__status {
+      float: left;
+      width: 50%;
+    }
+    
+    td:after { 
+  		/* Now like a table header */
+  		position: absolute;
+  		/* Top/left values mimic padding */
+  		top: 8px;
+  		left: 6px;
+  		width: 45%; 
+  		padding-right: 10px; 
+  		white-space: nowrap;
+      color: white;
+  	}
+    
+    tr {
+      border-bottom: 1px solid #ddd;
+    
+      &:before {
+        content: " ";
+        display: table;
+      }
+      
+      &:after {
+        content: " ";
+        display: table;
+        clear: both;
+      }
+    }
+    
+    td:nth-of-type(8):after { content: "Health Care"}
+    td:nth-of-type(9):after { content: "College Tuition"}
+    td:nth-of-type(10):after { content: "Minimum Wage"}
+    td:nth-of-type(11):after { content: "Women's Rights"}
+    td:nth-of-type(12):after { content: "Voting Rights"}
+    td:nth-of-type(13):after { content: "Criminal Justice"}
+    td:nth-of-type(14):after { content: "Wall Street"}
+    td:nth-of-type(15):after { content: "Climate"}
+  };
+  
+  @include until($medium) {
+    .fuzzy-search {
+      display: block;
+      width: 100%;
+    }
+    
+    .key {
+      position: relative;
+      display: block;
+      top: auto;
+      width: 100%;
+      transform: none;
+      margin-bottom: 20px;
+      right: auto;
+      padding: 10px;
+      
+      &__label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+      
+      &__item {
+        margin-top: 20px;
+      }
+    }
+  };
 }

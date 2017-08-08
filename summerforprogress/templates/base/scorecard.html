@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="section intro-bg pb4 row">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 pt4">
+          <span class="sub-heading">Scorecard</span>
+          <h1 class="mt0">The Summer for Progress: Let’s Move Our Country Forward</h1>
+          <p class="fs18">The Democratic Party Platform makes it clear that Democrats must fight for these issues as a party. We’re asking all House Democrats to commit to supporting our #PeoplesPlatform bills by signing on as a co-sponsor when Congress comes back in session in September.</p>
+          <p><strong>Find your Democratic Representative below to figure out how they stand on the #PeoplesPlatform.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="row scorecard" id="scorecard">
+    <div class="f5f5f5-bg mb20">
+      <div class="container">
+        <div class="col-md-12">
+          <input class="fuzzy-search mb20 mt20" placeholder="Search" />
+          <div class="key">
+            <span class="key__label"><strong>Key:</strong></span>
+            <div class="key__item">
+              <span class="key__color--yes"></span>
+              <span>Has Cosigned</span>
+            </div>
+            
+            <div class="key__item">
+              <span class="key__color--no"></span>
+              <span>Has Not Cosigned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container pb4">      
+      <div class="scorecard col-md-12">
+        <table class='table table-striped'>
+          <thead class="hidden-xs hidden-sm">
+            <tr>
+              <th></th>
+              <th class="sort" data-sort="first">First <i class="glyphicon glyphicon-sort"></i></th>
+              <th class="sort" data-sort="last">Last <i class="glyphicon glyphicon-sort"></i></th>
+              <th class="sort text-center" data-sort="score">Score <i class="glyphicon glyphicon-sort"></i></th>
+              <th class="sort text-center" data-sort="state">State <i class="glyphicon glyphicon-sort"></i></th>
+              <th class="sort text-center" data-sort="district">District <i class="glyphicon glyphicon-sort"></i></th>
+              <th class="scorecard__rotate sort" data-sort="healthcare"><div><span>Health Care <i class="glyphicon glyphicon-sort"></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="college_tuition"><div><span>Free College Tuition <i class="glyphicon glyphicon-sort"></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="minimum_wage"><div><span>Minimum Wage <i class="glyphicon glyphicon-sort"></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="womens_rights"><div><span>Women's Rights <i class="glyphicon glyphicon-sort"></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="voting_rights"><div><span>Voting Rights <i class="glyphicon glyphicon-sort"></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="justice"><div><span>Criminal Justice <i class="glyphicon glyphicon-sort"></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="workers_rights"><div><span>Wall Street <i class="glyphicon glyphicon-sort"></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="climate"><div><span>Climate <i class="glyphicon glyphicon-sort"></div></span></th>
+            </tr>
+          </thead>
+          
+          <tbody class="list">
+            {% for rep in data %}
+              <tr> 
+                <td class="hidden-xs hidden-sm">Rep.</td>
+                <td class="first hidden-xs hidden-sm">
+                  {{rep.first}}
+                </td>
+                <td class="first visible-xs visible-sm">
+                  Rep. {{rep.first}} {{rep.last}}, {{rep.state}} {{rep.district}}
+                </td>
+                <td class="last hidden-xs hidden-sm">{{rep.last}}</td>
+                <td class="score text-center">{{rep.score}}%</td>
+                <td class="state text-center hidden-xs hidden-sm">{{rep.state}}</td>
+                <td class="district text-center hidden-xs hidden-sm">{{rep.district}}</td>
+                <td class="scorecard__status healthcare {{ rep.healthcare|yesno:'yes,no'}}">
+                  <div class="scorecard__block">{{rep.healthcare}}</div>
+                </td>
+                <td class="scorecard__status college_tuition {{ rep.college_tuition|yesno:'yes,no'}}">
+                  <div class="scorecard__block">{{rep.college_tuition}}</div>
+                </td>
+                <td class="scorecard__status minimum_wage {{ rep.minimum_wage|yesno:'yes,no'}}">
+                  <div class="scorecard__block">{{rep.minimum_wage}}</div>
+                </td>
+                <td class="scorecard__status womens_rights {{ rep.womens_rights|yesno:'yes,no'}}">
+                  <div class="scorecard__block">{{rep.womens_rights}}</div>
+                </td>
+                <td class="scorecard__status voting_rights {{ rep.voting_rights|yesno:'yes,no'}}">
+                  <div class="scorecard__block">{{rep.voting_rights}}</div>
+                </td>
+                <td class="scorecard__status justice {{ rep.justice|yesno:'yes,no'}}">
+                  <div class="scorecard__block">{{rep.justice}}</div>
+                </td>
+                <td class="scorecard__status workers_rights {{ rep.workers_rights|yesno:'yes,no'}}">
+                  <div class="scorecard__block">{{rep.workers_rights}}</div>
+                </td>
+                <td class="scorecard__status climate {{ rep.climate|yesno:'yes,no'}}">
+                  <div class="scorecard__block">{{rep.climate}}</div>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="pagination"></div>
+      </div>
+    </div>
+  </section>
+  
+  
+  {% load static %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  
+  <script src="{% static "dist/js/list.min.js" %}" type="text/javascript"></script>
+  <script>  
+    $(document).ready(function() {
+      var options = {
+        valueNames: [ 'first', 'last','score','state','district','healthcare','college_tuition','minimum_wage','womens_rights','voting_rights','justice','workers_rights','climate' ],
+        pagination: true,
+        page: 25
+      };
+
+      var scorecardList = new List('scorecard', options);
+      
+      scorecardList.sort('score', {order: 'desc'});
+    })
+  </script>
+
+{% endblock %}
