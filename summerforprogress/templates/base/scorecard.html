@@ -52,7 +52,7 @@
               <th class="scorecard__rotate sort" data-sort="womens_rights"><div><span>Women's Rights <i class="glyphicon glyphicon-sort"></div></span></th>
               <th class="scorecard__rotate sort" data-sort="voting_rights"><div><span>Voting Rights <i class="glyphicon glyphicon-sort"></div></span></th>
               <th class="scorecard__rotate sort" data-sort="justice"><div><span>Criminal Justice <i class="glyphicon glyphicon-sort"></div></span></th>
-              <th class="scorecard__rotate sort" data-sort="workers_rights"><div><span>Wall Street <i class="glyphicon glyphicon-sort"></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="wall_street"><div><span>Wall Street <i class="glyphicon glyphicon-sort"></div></span></th>
               <th class="scorecard__rotate sort" data-sort="climate"><div><span>Climate <i class="glyphicon glyphicon-sort"></div></span></th>
             </tr>
           </thead>
@@ -89,8 +89,8 @@
                 <td class="scorecard__status justice {{ rep.justice|yesno:'yes,no'}}">
                   <div class="scorecard__block">{{rep.justice}}</div>
                 </td>
-                <td class="scorecard__status workers_rights {{ rep.workers_rights|yesno:'yes,no'}}">
-                  <div class="scorecard__block">{{rep.workers_rights}}</div>
+                <td class="scorecard__status wall_street {{ rep.wall_street|yesno:'yes,no'}}">
+                  <div class="scorecard__block">{{rep.wall_street}}</div>
                 </td>
                 <td class="scorecard__status climate {{ rep.climate|yesno:'yes,no'}}">
                   <div class="scorecard__block">{{rep.climate}}</div>
@@ -112,7 +112,7 @@
   <script>  
     $(document).ready(function() {
       var options = {
-        valueNames: [ 'first', 'last','score','state','district','healthcare','college_tuition','minimum_wage','womens_rights','voting_rights','justice','workers_rights','climate' ],
+        valueNames: [ 'first', 'last','score','state','district','healthcare','college_tuition','minimum_wage','womens_rights','voting_rights','justice','wall_street','climate' ],
         pagination: true,
         page: 25
       };

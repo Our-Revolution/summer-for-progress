@@ -12,7 +12,7 @@ class Representative(models.Model):
     healthcare = models.NullBooleanField(null=True,blank=True)
     college_tuition = models.NullBooleanField(null=True,blank=True)
     minimum_wage = models.NullBooleanField(null=True,blank=True)
-    workers_rights = models.NullBooleanField(null=True,blank=True)
+    wall_street = models.NullBooleanField(null=True,blank=True)
     womens_rights = models.NullBooleanField(null=True,blank=True)
     voting_rights = models.NullBooleanField(null=True,blank=True)
     justice = models.NullBooleanField(null=True,blank=True)
@@ -32,7 +32,7 @@ class Representative(models.Model):
         if self.minimum_wage:
             score += 1
             
-        if self.workers_rights:
+        if self.wall_street:
             score += 1
             
         if self.womens_rights:

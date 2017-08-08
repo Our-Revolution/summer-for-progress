@@ -6,6 +6,6 @@ from models import *
 class RepresentativeAdmin(admin.ModelAdmin):
     exclude = ()
     
-    list_display = ('first','last','score','state','district','healthcare','college_tuition','minimum_wage','workers_rights','womens_rights','voting_rights','justice','climate','last_updated')
+    list_display = ('first','last','score','state','district','healthcare','college_tuition','minimum_wage','wall_street','womens_rights','voting_rights','justice','climate','last_updated')
     
     search_fields = ('first','last','state','district')
