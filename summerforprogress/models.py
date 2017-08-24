@@ -50,6 +50,8 @@ class Representative(models.Model):
             
         score = (float(score) / NUM_BILLS) * 100
 
+        print score
+
         self.score = score
         
         super(Representative, self).save(*args, **kwargs)
