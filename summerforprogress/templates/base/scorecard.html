@@ -30,11 +30,6 @@
               <span class="key__color--no"></span>
               <span>Has Not Cosigned</span>
             </div>
-            
-            <div class="key__item">
-              <span class="key__color--gray"></span>
-              <span>Not Introduced Yet</span>
-            </div>
           </div>
         </div>
       </div>
@@ -58,7 +53,7 @@
               <th class="scorecard__rotate sort" data-sort="voting_rights"><div><span>Voting Rights <i class="glyphicon glyphicon-sort"></div></span></th>
               <th class="scorecard__rotate sort" data-sort="justice"><div><span>Criminal Justice <i class="glyphicon glyphicon-sort"></div></span></th>
               <th class="scorecard__rotate sort" data-sort="wall_street"><div><span>Wall Street <i class="glyphicon glyphicon-sort"></div></span></th>
-              <th class="scorecard__rotate"><div><span>Climate <!--<i class="glyphicon glyphicon-sort">--></div></span></th>
+              <th class="scorecard__rotate sort" data-sort="climate"><div><span>Climate <i class="glyphicon glyphicon-sort"></div></span></th>
             </tr>
           </thead>
           
@@ -117,7 +112,7 @@
   <script>  
     $(document).ready(function() {
       var options = {
-        valueNames: [ 'first', 'last','score','state','district','healthcare','college_tuition','minimum_wage','womens_rights','voting_rights','justice','wall_street' ],
+        valueNames: [ 'first', 'last','score','state','district','healthcare','college_tuition','minimum_wage','womens_rights','voting_rights','justice','wall_street','climate'],
         pagination: true,
         page: 25
       };

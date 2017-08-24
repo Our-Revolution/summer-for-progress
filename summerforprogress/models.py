@@ -21,7 +21,7 @@ class Representative(models.Model):
     last_updated = models.DateTimeField(auto_now=True, null=True, blank=True)
         
     def save(self, *args, **kwargs):   
-        NUM_BILLS = 7 
+        NUM_BILLS = 8 
         score = 0        
         
         if self.healthcare:
@@ -45,9 +45,8 @@ class Representative(models.Model):
         if self.justice:
             score += 1
         
-        # still waiting on climate bill
-        # if self.climate:
-        #     score += 1
+        if self.climate:
+            score += 1
             
         score = (float(score) / NUM_BILLS) * 100
 
