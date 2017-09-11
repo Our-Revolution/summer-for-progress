@@ -56,7 +56,7 @@ Run the development server.
 ./manage runserver
 ```
 
-Importing representatives
+Importing Representatives
 ---------------------------
 The Summer for Progress site contains a scorecard to monitor elected officials stances on the various bills inside the People's Platform.
 
