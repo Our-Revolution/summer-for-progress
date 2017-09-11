@@ -1,53 +1,83 @@
-# Heroku Django Starter Template
+Summer for Progress
+=========================
 
-An utterly fantastic project starter template for Django 1.11.
+* [What is this?](#what-is-this)
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+* [Usage & Useful Commands](#usage-&-useful-commands)
 
-## Features
+What is this?
+-------------------
+The official website for the Summer for Progress, a campaign organized by progressive groups across the country to demand House Democrats cosponsor a people’s platform – 8 bills that say definitively people over profit.
 
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment. 
+Prerequisites
+-------------------
+1. [Python 2.7](https://www.python.org/downloads/) and [Pip](https://pip.pypa.io/en/stable/installing/)
+2. [PostgreSQL](https://www.postgresql.org/download/) – If you have [homebrew](https://brew.sh/), simply `brew install postgresql`
+3. **Recommended** - [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
+4. [Node + NPM](https://nodejs.org/en/download/) for building front-end. 
 
-## How to Use
+Installation
+-------------------
+Clone this repository and navigate to the project directory.
+```
+git clone git@github.com:Our-Revolution/summer-for-progress.git summerforprogress
+cd summerforprogress
+```
+Optionally (but recommended), make a [virtualenv](https://pypi.python.org/pypi/virtualenv) and activate it using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/).
+```
+mkvirtualenv summerforprogress
+workon summerforprogress
+```
+Install required packages.
+```
+pip install -r requirements.txt
+```
 
-To use this project, follow these steps:
+Create a PostgreSQL database with the PostGIS extension and add the database URL to your .env file. 
+```
+local here=${PWD##*/};
+createuser "$here" && createdb -O"$here" -Eutf8 "$here" && echo "DATABASE_URL=postgis://$here@localhost:5432/$here" >> .env && echo "CREATE EXTENSION postgis;" | psql -U superuser "$here";
+```
 
-1. Create your working environment.
-2. Install Django (`$ pip install django`)
-3. Create a new project using this template
+**Note:** Add the [following gist](https://gist.github.com/cjmabry/c78f40ae772a742deaa193f3c1534532) to your .bash_profile or .zshrc to easily create project databases.
 
-## Creating Your Project
+Install front-end dependencies.
+```
+npm install
+```
 
-Using this template to create a new Django app is easy::
+Run initial database migrations.
+```
+./manage.py migrate
+```
+Run the development server.
+```
+./manage runserver
+```
 
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
+Importing representatives
+---------------------------
+The Summer for Progress site contains a scorecard to monitor elected officials stances on the various bills inside the People's Platform.
 
-(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
+To quickly import starting data for these representatives, use the CSV importer functionality in the django admin.
 
-You can replace ``helloworld`` with your desired project name.
+Visit [http://localhost:8000/admin/](http://localhost:8000/admin/), and add and save a new CSV import, using `summerforprogress.Representative` as the model name and `data/initial_data.csv` as the upload file.
 
-## Deployment to Heroku
+Usage & Useful Commands
+-------------------
+From the working directory:
 
-    $ git init
-    $ git add -A
-    $ git commit -m "Initial commit"
+```
+# Create an Admin User
+python manage.py createsuperuser
 
-    $ heroku create
-    $ git push heroku master
+# Run Local Server
+python manage.py runserver
 
-    $ heroku run python manage.py migrate
+# Make Migrations
+python manage.py makemigrations
 
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
-
-## Using Python 2.7?
-
-Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
-
-
-## License: MIT
-
-## Further Reading
-
-- [Gunicorn](https://warehouse.python.org/project/gunicorn/)
-- [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
-- [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
+# Run Migrations
+python manage.py migrate
+```
