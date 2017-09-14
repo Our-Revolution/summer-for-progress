@@ -48,8 +48,8 @@ createuser "$here" && createdb -O"$here" -Eutf8 "$here" && echo "DATABASE_URL=po
 to your .bash_profile or .zshrc to easily create project databases.
 * If first line throws error trying to set value of `here`, then skip first line 
 and instead replace `"$here"` in second line with `summerforprogress`.
-* If db connect throws authentication error, try updating `.env` db url config
-to be `postgis:///summerforprogress` [without host and port](https://www.peterbe.com/plog/connecting-with-psycopg2-without-a-username-and-password).
+* If db connection throws authentication error, try updating `.env` db url 
+config to be `postgis:///summerforprogress` [without host and port](https://www.peterbe.com/plog/connecting-with-psycopg2-without-a-username-and-password).
 
 Install front-end dependencies.
 ```
