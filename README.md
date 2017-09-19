@@ -15,7 +15,9 @@ Prerequisites
 1. [Python 2.7](https://www.python.org/downloads/) and [Pip](https://pip.pypa.io/en/stable/installing/)
 2. [PostgreSQL](https://www.postgresql.org/download/) – If you have [homebrew](https://brew.sh/), simply `brew install postgresql`
 3. **Recommended** - [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
-4. [Node + NPM](https://nodejs.org/en/download/) for building front-end. 
+4. [Node + NPM](https://nodejs.org/en/download/) for building front-end. Need to 
+have recent version of node. Try updating version if you get node related setup 
+errors.
 
 Installation
 -------------------
@@ -40,7 +42,14 @@ local here=${PWD##*/};
 createuser "$here" && createdb -O"$here" -Eutf8 "$here" && echo "DATABASE_URL=postgis://$here@localhost:5432/$here" >> .env && echo "CREATE EXTENSION postgis;" | psql -U superuser "$here";
 ```
 
-**Note:** Add the [following gist](https://gist.github.com/cjmabry/c78f40ae772a742deaa193f3c1534532) to your .bash_profile or .zshrc to easily create project databases.
+**Notes:** 
+
+* Add the [following gist](https://gist.github.com/cjmabry/c78f40ae772a742deaa193f3c1534532) 
+to your .bash_profile or .zshrc to easily create project databases.
+* If first line throws error trying to set value of `here`, then skip first line 
+and instead replace `"$here"` in second line with `summerforprogress`.
+* If db connection throws authentication error, try updating `.env` db url 
+config to be `postgis:///summerforprogress` [without host and port](https://www.peterbe.com/plog/connecting-with-psycopg2-without-a-username-and-password).
 
 Install front-end dependencies.
 ```
@@ -53,10 +62,10 @@ Run initial database migrations.
 ```
 Run the development server.
 ```
-./manage runserver
+./manage.py runserver
 ```
 
-Importing representatives
+Importing Representatives
 ---------------------------
 The Summer for Progress site contains a scorecard to monitor elected officials stances on the various bills inside the People's Platform.
 
